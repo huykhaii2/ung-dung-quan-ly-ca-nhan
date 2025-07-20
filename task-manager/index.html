@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quản lý Nhiệm vụ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Ứng dụng Quản lý Nhiệm vụ Cá nhân</h1>
+    <div class="input-container">
+      <label for="taskInput">Nhập nhiệm vụ cần làm</label>
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Nhập nhiệm vụ..."
+        onkeypress="if(event.key==='Enter') addTask()"
+      />
+      <button onclick="addTask()">Thêm nhiệm vụ</button>
+    </div>
+    <div id="container-tasks"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

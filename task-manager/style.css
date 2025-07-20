@@ -1,0 +1,237 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.input-container label {
+  font-weight: 500;
+  color: #333;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.input-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Container chính */
+#container-tasks {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header danh sách nhiệm vụ */
+.task-list-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border-left: 4px solid #007bff;
+}
+
+/* Bảng nhiệm vụ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Header bảng */
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+thead th {
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table row styling */
+tbody tr {
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #e9ecef;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even):hover {
+  background-color: #f0f0f0;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Table cell styling */
+td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  text-align: center;
+  border-right: 1px solid #f0f0f0;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+/* Checkbox styling */
+td input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #007bff;
+  transform: scale(1.1);
+  transition: transform 0.1s ease;
+}
+
+td input[type="checkbox"]:hover {
+  transform: scale(1.2);
+}
+
+/* Task title styling */
+td span {
+  display: inline-block;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  width: 100%;
+  padding: 5px 0;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+/* Completed task styling */
+td span[style*="line-through"] {
+  color: #6c757d;
+  opacity: 0.7;
+}
+
+/* Edit button styling */
+td:nth-child(3) button {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+td:nth-child(3) button:hover {
+  background: linear-gradient(45deg, #218838, #1aa179);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+
+/* Delete button styling */
+td:nth-child(4) button {
+  background: linear-gradient(45deg, #dc3545, #e85569);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+td:nth-child(4) button:hover {
+  background: linear-gradient(45deg, #c82333, #d63647);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.8em;
+  }
+  
+  td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+  
+  td input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+  
+  td span {
+    font-size: 12px;
+  }
+  
+  td:nth-child(3) button,
+  td:nth-child(4) button {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  
+  .task-list-header {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  td:nth-child(3) button,
+  td:nth-child(4) button {
+    padding: 4px 8px;
+  }
+}
